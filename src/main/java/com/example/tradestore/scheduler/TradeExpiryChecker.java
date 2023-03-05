@@ -16,6 +16,9 @@ public class TradeExpiryChecker {
     @Autowired
     TradeStoreService tradeStoreService;
 
+    /*
+    Changes to call the method once everyday
+     */
     @Scheduled(fixedDelay = 1, timeUnit = TimeUnit.DAYS)
     public void updateExpiredTrades() {
         log.info(ApplicationConstants.INSIDE_UPDATE_EXPIRED_TRADES_METHOD_SCHEDULER, LocalDate.now());
